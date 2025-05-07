@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import AnimatedText from './AnimatedText';
+import { Github, Linkedin, Eye, FileText, X } from 'lucide-react';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -51,20 +51,46 @@ const Hero = () => {
             Full Stack Engineer with a focus on AI innovation and autonomous agents.
           </motion.p>
           
+          {/* Social Icons above buttons */}
+          <motion.div 
+            className="flex justify-center gap-6 mb-6"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
+            <a href="https://github.com/kalpsenghani" target="_blank" rel="noopener noreferrer" className="group">
+              <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800/60 text-white text-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+                <Github className="w-6 h-6" />
+              </span>
+            </a>
+            <a href="https://linkedin.com/in/kalpsenghani" target="_blank" rel="noopener noreferrer" className="group">
+              <span className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-800/60 text-white text-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+                <Linkedin className="w-6 h-6" />
+              </span>
+            </a>
+            <a href="https://x.com/kalpsenghani" target="_blank" rel="noopener noreferrer" className="group">
+              <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-700/60 text-white text-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+                <X className="w-6 h-6" />
+              </span>
+            </a>
+          </motion.div>
+          
           <motion.div 
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
           >
-            <Button className="py-6 px-8 bg-blue-600 hover:bg-blue-700 text-white">
-              <a href="#projects">View My Work</a>
+            <Button className="py-6 px-8 bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2">
+              <Eye className="w-5 h-5 mr-2" />
+              <a href="#projects">My Work</a>
             </Button>
             <Button 
               variant="outline" 
-              className="py-6 px-8 border-blue-500/30 text-blue-400 hover:bg-blue-900/20"
+              className="py-6 px-8 border-blue-500/30 text-blue-400 hover:bg-blue-900/20 flex items-center gap-2"
               onClick={handleResumeDownload}
             >
+              <FileText className="w-5 h-5 mr-2" />
               Resume
             </Button>
           </motion.div>

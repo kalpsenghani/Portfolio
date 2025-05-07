@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -93,7 +94,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-gray-900/50 backdrop-blur-sm border border-white/10 shadow-lg;
+    @apply bg-gray-900/30 backdrop-blur-md border border-white/10 shadow-lg;
   }
   
   .section-container {
@@ -101,7 +102,7 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 text-center;
+    @apply text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
   }
   
   .transition-all-300 {
@@ -122,7 +123,7 @@
   
   .glowing-card::before {
     content: '';
-    @apply absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl opacity-0 transition-opacity duration-300 blur-xl;
+    @apply absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl opacity-0 transition-opacity duration-300 blur-xl;
     z-index: -1;
   }
   
@@ -208,6 +209,53 @@
     transform-origin: center bottom;
     animation: wave 15s linear infinite;
   }
-}
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+  /* New AI-themed styles */
+  .ai-gradient {
+    @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500;
+  }
+
+  .ai-gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .ai-glow {
+    @apply relative;
+  }
+
+  .ai-glow::after {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200;
+    z-index: -1;
+  }
+
+  .ai-button {
+    @apply relative overflow-hidden rounded-lg px-6 py-3 transition-all duration-300;
+  }
+
+  .ai-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 transition-opacity duration-300;
+  }
+
+  .ai-button:hover::before {
+    @apply opacity-100;
+  }
+
+  .ai-card {
+    @apply relative overflow-hidden rounded-xl bg-gray-900/30 backdrop-blur-md border border-white/10;
+  }
+
+  .ai-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 transition-opacity duration-300;
+  }
+
+  .ai-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .ai-border {
+    @apply border border-white/10 hover:border-blue-500/50 transition-colors duration-300;
+  }
+}

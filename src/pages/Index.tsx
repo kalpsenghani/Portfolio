@@ -9,10 +9,12 @@ import Contact from '@/components/Contact';
 import AiLab from '@/components/AiLab';
 import Blog from '@/components/Blog';
 import BackgroundAnimation from '@/components/BackgroundAnimation';
+import CustomScrollbar from '@/components/CustomScrollbar';
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col relative">
+      <CustomScrollbar />
       <BackgroundAnimation />
       <Navbar />
       <main className="flex-grow z-10">
