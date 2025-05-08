@@ -78,12 +78,15 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button
               className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-400 hover:via-purple-400 hover:to-pink-400 text-white px-6 py-6 rounded-full transition-all duration-300"
+              asChild
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative flex items-center">
-                <Mail className="w-4 h-4 mr-2" />
-                Contact
-              </span>
+              <a href="#contact">
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="relative flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Contact
+                </span>
+              </a>
             </Button>
           </div>
           
