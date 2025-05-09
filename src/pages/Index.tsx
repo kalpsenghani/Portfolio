@@ -6,7 +6,7 @@ import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
 import Technologies from '@/components/Technologies';
 import Contact from '@/components/Contact';
-import AiLab from '@/components/AiLab';
+import AILabs from '@/components/AILabs';
 import Blog from '@/components/Blog';
 import BackgroundAnimation from '@/components/BackgroundAnimation';
 import CustomScrollbar from '@/components/CustomScrollbar';
@@ -23,7 +23,7 @@ const Index = () => {
         <About />
         <Projects />
         <Blog />
-        <AiLab />
+        <AILabs />
         {/* Renamed from Contact to Resume in the UI (component remains the same) */}
         <Contact />
       </main>

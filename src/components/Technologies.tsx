@@ -42,8 +42,21 @@ const itemVariants = {
 
 const Technologies = () => {
   return (
-    <section id="technologies" className="section-container py-16">
-      <h2 className="section-title mb-12">Technologies I Work With</h2>
+    <section id="technologies" className="section-container">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="section-title">
+          Technologies I Work With
+        </h2>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          Cutting-edge tools and frameworks for building the future
+        </p>
+      </motion.div>
       
       <motion.div
         className="flex flex-wrap justify-center items-center gap-8 max-w-4xl mx-auto"
@@ -60,17 +73,29 @@ const Technologies = () => {
             rel="noopener noreferrer"
             className="flex flex-col items-center group no-underline"
             variants={itemVariants}
+            whileHover={{ 
+              scale: 1.05,
+              rotateY: 5,
+              transition: { type: "spring", stiffness: 300 }
+            }}
             whileTap={{ scale: 0.96 }}
           >
-            <div className="relative p-4 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <img 
+            <div className="relative p-4 rounded-xl bg-black/40 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/10 to-purple-600/0 rounded-xl blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-150 group-hover:scale-100"></div>
+              <motion.img 
                 src={tech.icon} 
                 alt={tech.name} 
                 className="w-16 h-16 relative z-10"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400 }}
               />
             </div>
-            <span className="mt-2 text-sm text-gray-400 group-hover:text-white transition-colors duration-300">{tech.name}</span>
+            <motion.span 
+              className="mt-2 text-sm text-gray-400 group-hover:text-blue-400 transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              {tech.name}
+            </motion.span>
           </motion.a>
         ))}
       </motion.div>

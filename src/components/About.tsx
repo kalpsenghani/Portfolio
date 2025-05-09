@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -51,18 +50,18 @@ const About = () => {
         <div className="lg:col-span-1">
           <Card className="h-full glass-card rounded-xl border-muted">
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-4">Who I Am</h3>
+              <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">Who I Am</h3>
               <p className="text-muted-foreground mb-4">
-                I'm a full stack engineer who specializes in building intelligent, AI-powered applications that solve complex problems.
+                I'm a <span className="font-semibold text-blue-400">full stack engineer</span> who specializes in building intelligent, AI-powered applications that solve complex problems.
               </p>
               <p className="text-muted-foreground mb-4">
-                With expertise spanning both frontend and backend development, I focus on creating seamless user experiences backed by robust, scalable architectures.
+                With expertise spanning both <span className="font-semibold text-blue-400">frontend and backend development</span>, I focus on creating seamless user experiences backed by robust, scalable architectures.
               </p>
               <p className="text-muted-foreground">
-                Currently, I'm exploring the potential of AI agents to automate workflows and enhance software capabilities.
+                Currently, I'm exploring the potential of <span className="font-semibold text-blue-400">AI agents</span> to automate workflows and enhance software capabilities.
               </p>
               
-              <h3 className="text-xl font-semibold mt-8 mb-4">Technical Skills</h3>
+              <h3 className="text-xl font-semibold mt-8 mb-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">Technical Skills</h3>
               <div className="grid grid-cols-2 gap-2">
                 <Skill label="AI/ML" percentage={90} />
                 <Skill label="React" percentage={95} />
@@ -78,12 +77,12 @@ const About = () => {
         {/* Timeline */}
         <div className="lg:col-span-2">
           <div className="relative">
-            <div className="absolute left-6 top-5 bottom-5 w-0.5 bg-muted"></div>
+            <div className="absolute left-6 top-5 bottom-5 w-0.5 bg-gradient-to-b from-blue-400 to-blue-600"></div>
             
             <div className="space-y-12">
               {timelineData.map((item) => (
                 <div key={item.id} className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-12 h-12 bg-secondary flex items-center justify-center rounded-full border-4 border-background z-10">
+                  <div className="absolute left-0 top-1 w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center rounded-full border-4 border-background z-10">
                     {item.type === 'education' ? (
                       <GraduationIcon />
                     ) : item.type === 'experience' ? (
@@ -98,7 +97,7 @@ const About = () => {
                       <div className="text-sm font-medium text-muted-foreground mb-1">
                         {item.year}
                       </div>
-                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                      <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">{item.title}</h3>
                       <p className="text-muted-foreground">
                         {item.description}
                       </p>
@@ -117,12 +116,12 @@ const About = () => {
 const Skill = ({ label, percentage }: { label: string; percentage: number }) => (
   <div className="mb-3">
     <div className="flex justify-between mb-1">
-      <span className="text-sm font-medium">{label}</span>
+      <span className="text-sm font-medium text-blue-400">{label}</span>
       <span className="text-sm text-muted-foreground">{percentage}%</span>
     </div>
-    <div className="w-full h-2 bg-secondary rounded-full">
+    <div className="w-full h-2 bg-gray-700/50 rounded-full overflow-hidden">
       <div 
-        className="h-2 bg-primary rounded-full" 
+        className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-500 ease-out"
         style={{ width: `${percentage}%` }}
       />
     </div>
@@ -131,7 +130,7 @@ const Skill = ({ label, percentage }: { label: string; percentage: number }) => 
 
 const WorkIcon = () => (
   <svg 
-    className="w-5 h-5 text-primary" 
+    className="w-5 h-5 text-white" 
     fill="none" 
     stroke="currentColor" 
     viewBox="0 0 24 24" 
@@ -148,7 +147,7 @@ const WorkIcon = () => (
 
 const GraduationIcon = () => (
   <svg 
-    className="w-5 h-5 text-primary" 
+    className="w-5 h-5 text-white" 
     fill="none" 
     stroke="currentColor" 
     viewBox="0 0 24 24" 
@@ -171,7 +170,7 @@ const GraduationIcon = () => (
 
 const AwardIcon = () => (
   <svg 
-    className="w-5 h-5 text-primary" 
+    className="w-5 h-5 text-white" 
     fill="none" 
     stroke="currentColor" 
     viewBox="0 0 24 24" 
