@@ -11,8 +11,8 @@ const contactMethods = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'kalp@example.com',
-    href: 'mailto:kalp@example.com',
+    value: 'kalpsenghani0601@gmail.com',
+    href: 'mailto:kalpsenghani0601@gmail.com',
     bg: 'bg-blue-700',
     iconColor: 'text-white',
   },

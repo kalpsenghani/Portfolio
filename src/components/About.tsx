@@ -11,33 +11,27 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
-    id: 1,
-    year: "2023 - Present",
-    title: "AI Engineer & Full Stack Developer",
-    description: "Leading development of agentic applications and automations, specializing in AI-powered workflows and LLM integrations.",
-    type: "experience"
-  },
-  {
-    id: 2,
-    year: "2021 - 2023",
-    title: "Senior Software Engineer",
-    description: "Architected and implemented enterprise-grade applications with a focus on React, Node.js, and cloud infrastructure.",
-    type: "experience"
-  },
-  {
-    id: 3,
-    year: "2019 - 2021",
-    title: "Software Developer",
-    description: "Built user-centric web applications and delivered solutions for diverse client requirements.",
-    type: "experience"
-  },
-  {
-    id: 4,
-    year: "2015 - 2019",
-    title: "B.S. Computer Science",
-    description: "Graduated with honors, focusing on artificial intelligence and distributed systems.",
-    type: "education"
-  }
+  id: 1,
+  year: "2024 - Present",
+  title: "Founder & AI Automation Engineer at AgenAura",
+  description: "Building agentic AI automations for content creation, job applications, lead generation, and personal productivity using OpenAI, Supabase, and n8n.",
+  type: "experience"
+},
+{
+  id: 2,
+  year: "2022 - 2025",
+  title: "Advanced Diploma in Computer Programming & Analysis, George Brown College",
+  description: "Focused on full stack development, AI, cloud computing, and mobile app development. Built multiple academic and personal projects using modern technologies.",
+  type: "education"
+},
+{
+  id: 3,
+  year: "2023 - 2024",
+  title: "Personal Life Operating System (PLOS) – AI-Powered Productivity App",
+  description: "Designed and developed a modular PWA for tracking health, mood, goals, and journaling. Integrated GPT-4, Supabase, Zustand, TailwindCSS, and Next.js 14.",
+  type: "experience"
+}
+
 ];
 
 const About = () => {
