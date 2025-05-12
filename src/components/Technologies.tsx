@@ -11,11 +11,11 @@ const techStack = [
   { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', docs: 'https://nextjs.org/docs' },
   { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', docs: 'https://www.mongodb.com/docs/' },
   { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', docs: 'https://www.postgresql.org/docs/' },
-  { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg', docs: 'https://docs.aws.amazon.com/' },
-  { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', docs: 'https://tailwindcss.com/docs' },
+  { name: 'AWS', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg', docs: 'https://docs.aws.amazon.com/' },
+  { name: 'Tailwind', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg', docs: 'https://tailwindcss.com/docs' },
   { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', docs: 'https://docs.docker.com/' },
   { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', docs: 'https://developer.mozilla.org/docs/Web/JavaScript' },
-  { name: 'n8n', icon: 'https://cdn.jsdelivr.net/gh/n8n-io/n8n/icons/icon.svg', docs: 'https://docs.n8n.io/' },
+  { name: 'n8n', icon: 'https://n8n.io/images/n8n-logo.svg', docs: 'https://docs.n8n.io/' },
 ];
 
 const containerVariants = {
@@ -41,6 +41,12 @@ const itemVariants = {
 };
 
 const Technologies = () => {
+  const [imageErrors, setImageErrors] = React.useState<Record<string, boolean>>({});
+
+  const handleImageError = (techName: string) => {
+    setImageErrors(prev => ({ ...prev, [techName]: true }));
+  };
+
   return (
     <section id="technologies" className="section-container">
       <motion.div
@@ -65,7 +71,7 @@ const Technologies = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {techStack.map((tech, index) => (
+        {techStack.map((tech) => (
           <motion.a
             key={tech.name}
             href={tech.docs}
@@ -82,13 +88,20 @@ const Technologies = () => {
           >
             <div className="relative p-4 rounded-xl bg-black/40 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/10 to-purple-600/0 rounded-xl blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-150 group-hover:scale-100"></div>
-              <motion.img 
-                src={tech.icon} 
-                alt={tech.name} 
-                className="w-16 h-16 relative z-10"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              />
+              {!imageErrors[tech.name] ? (
+                <motion.img 
+                  src={tech.icon} 
+                  alt={tech.name} 
+                  className="w-16 h-16 relative z-10"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                  onError={() => handleImageError(tech.name)}
+                />
+              ) : (
+                <div className="w-16 h-16 relative z-10 flex items-center justify-center text-blue-400">
+                  {tech.name.charAt(0)}
+                </div>
+              )}
             </div>
             <motion.span 
               className="mt-2 text-sm text-gray-400 group-hover:text-blue-400 transition-colors duration-300"

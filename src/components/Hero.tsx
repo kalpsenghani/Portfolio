@@ -7,7 +7,7 @@ import { Github, Linkedin, Eye, FileText, X } from 'lucide-react';
 const Hero = () => {
   const handleResumeDownload = () => {
     // Link to the resume PDF file
-    window.open('/kalp_resume.pdf', '_blank');
+    window.open('/Kalp_Full_Stack.pdf', '_blank');
   };
 
   return (
