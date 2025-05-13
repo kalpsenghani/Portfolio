@@ -1,6 +1,5 @@
 import React from 'react';
 import WaveBackground from './WaveBackground';
-import AiBackgroundIcons from './AiBackgroundIcons';
 
 const BackgroundAnimation = () => {
   return (
@@ -10,9 +9,6 @@ const BackgroundAnimation = () => {
       
       {/* Wave animation */}
       <WaveBackground />
-      
-      {/* AI Icons */}
-      {/* <AiBackgroundIcons /> */}
       
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-grid-white/[0.01] bg-[length:50px_50px]"></div>

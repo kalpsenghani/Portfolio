@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import BlogList from "./components/BlogList";
 import BlogPost from "./components/BlogPost";
 import AILabDetail from "./components/AILabDetail";
+import MicroProjects from "@/pages/MicroProjects";
+import ModernGradientBackground from "@/components/ModernGradientBackground";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +17,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <div className="min-h-screen bg-background font-sans">
+        <ModernGradientBackground />
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -23,6 +26,7 @@ const App = () => (
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/ai-labs/:labId" element={<AILabDetail />} />
+            <Route path="/micro-projects" element={<MicroProjects />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

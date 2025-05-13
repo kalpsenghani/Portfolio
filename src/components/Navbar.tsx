@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import {
   User,
   Code2,
@@ -47,7 +46,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo with glowing effect */}
-          <div className="relative group flex items-center justify-center">
+          <a href="#" className="relative group flex items-center justify-center">
             {/* Full logo glow effect */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-900 rounded-full blur-2xl opacity-60 group-hover:opacity-90 transition-all duration-500"></div>
@@ -57,7 +56,7 @@ const Navbar = () => {
               alt="Kalp Logo" 
               className="h-14 w-14 relative z-10" 
             />
-          </div>
+          </a>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center flex-1 justify-center">

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard, { Project } from './ProjectCard';
 import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
 
 // Sample projects data
 const projectsData: Project[] = [
@@ -27,7 +28,7 @@ const projectsData: Project[] = [
     id: 3,
     title: "Developer Portfolio Generator",
     description: "A tool that creates personalized developer portfolios by analyzing GitHub repositories and customizing designs.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+    image: "https://images.unsplash.com/photo-1498050108023-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
     tags: ["Next.js", "TypeScript", "Tailwind", "GitHub API"],
     demoUrl: "https://example.com/demo3",
     githubUrl: "https://github.com/example/project3"
@@ -52,12 +53,12 @@ const projectsData: Project[] = [
   },
   {
     id: 6,
-    title: "Code Review Assistant",
-    description: "An AI-powered tool that helps developers review code, suggest improvements, and maintain coding standards.",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["AI", "Python", "FastAPI", "GitHub"],
-    demoUrl: "https://example.com/demo6",
-    githubUrl: "https://github.com/example/project6"
+    title: "AI Job Advisor",
+    description: `A full stack web application that analyzes resumes using AI to provide job role suggestions, resume improvement tips, and interview preparation questions. We can Upload Resume for AI Analysis. It has Intelligent parsing and analysis using OpenAI GPT-4 along with Personalized Recommendations. It gives Top 5 job role suggestions matching the candidate's profile and resume improvement tips Interview questions based on experience and Stores previous analysis results`,
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+    tags: ["Axios", "OpenAI GPT-4", "React", "Node.js"],
+    demoUrl: "https://yourjobadvisor.netlify.app/",
+    githubUrl: "https://github.com/kalpsenghani/AI_Job_Advisor"
   }
 ];
 
@@ -86,8 +87,8 @@ const Projects = () => {
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </div>
-      
-      {/* View All Projects button */}
+
+      {/* Micro Projects Button */}
       <motion.div 
         className="text-center mt-12"
         initial={{ opacity: 0 }}
@@ -95,9 +96,11 @@ const Projects = () => {
         transition={{ delay: 0.5 }}
         viewport={{ once: true }}
       >
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-          View All Projects
-        </Button>
+        <Link to="/micro-projects">
+          <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-400 hover:via-purple-400 hover:to-pink-400 text-white">
+            View Micro Projects
+          </Button>
+        </Link>
       </motion.div>
     </section>
   );

@@ -13,8 +13,8 @@ const timelineData: TimelineItem[] = [
   {
   id: 1,
   year: "2024 - Present",
-  title: "Founder & AI Automation Engineer at AgenAura",
-  description: "Building agentic AI automations for content creation, job applications, lead generation, and personal productivity using OpenAI, Supabase, and n8n.",
+  title: "Founder & AI Automation Engineer at AgenAura (In Development)",
+  description: "Designing and prototyping agentic AI automations for content creation, job applications, lead generation, and personal productivity using OpenAI, Supabase, and n8n. Focused on building scalable workflows and innovative AI-driven solutions.",
   type: "experience"
 },
 {
