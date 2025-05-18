@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
@@ -13,6 +12,9 @@ export interface Project {
   tags: string[];
   demoUrl?: string;
   githubUrl?: string;
+  status?: string;
+  statusColor?: string;
+  statusGlow?: string;
 }
 
 interface ProjectCardProps {
@@ -67,9 +69,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         
         <CardFooter className="flex justify-between gap-4 pt-2">
           {project.demoUrl && (
-            <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+            <Button asChild className={`w-full ${
+              project.status 
+                ? project.statusColor || '' 
+                : 'bg-blue-600 hover:bg-blue-700 text-white'
+            }`}>
               <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                Live Demo
+                {project.status ? project.status : 'Live Demo'}
               </a>
             </Button>
           )}

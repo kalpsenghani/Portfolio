@@ -9,12 +9,12 @@ import ProjectCard, { Project } from '@/components/ProjectCard';
 const microProjectsData: Project[] = [
   {
     id: 1,
-    title: "SpaceX Launch Tracker",
-    description: "A comprehensive SpaceX launch tracker that displays upcoming and past launches with advanced filtering, sorting, and search capabilities. Features include mission details, launch status, and rocket information.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-    tags: ["Angular", "SpaceX API", "TypeScript", "Tailwind"],
-    demoUrl: "https://spacexlabtest2.netlify.app/",
-    githubUrl: "https://github.com/kalpsenghani/SpaceX_API"
+    title: "Autonomous Coding Agent",
+    description: "A coding assistant that can understand complex requirements and generate complete code solutions with explanations.",
+    image: "https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    tags: ["AI", "Python", "LangChain", "Agents"],
+    demoUrl: "https://example.com/demo2",
+    githubUrl: "https://github.com/example/project2"
   },
   {
     id: 2,
@@ -36,21 +36,21 @@ const microProjectsData: Project[] = [
   },
   {
     id: 4,
-    title: "Employee Management System",
-    description: "A comprehensive employee management solution built with Angular and Node.js/GraphQL. Features include complete CRUD operations for employee data, secure file upload capabilities, robust authentication system, and a modern responsive UI. The system provides an efficient way to manage employee information, track records, and handle administrative tasks.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["Angular", "Node.js", "GraphQL", "Authentication", "Apollo Client","Express.js"],
-    demoUrl: "https://emp-hub.netlify.app/",
-    githubUrl: "https://github.com/kalpsenghani/Employee-Management-System"
+    title: "Smart Home Dashboard",
+    description: "A modern dashboard for controlling and monitoring smart home devices with real-time analytics and automation rules.",
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    tags: ["IoT", "React", "WebSocket", "D3.js"],
+    demoUrl: "https://example.com/demo5",
+    githubUrl: "https://github.com/example/project5"
   },
   {
     id: 5,
-    title: "Portfolio with Admin Dashboard",
-    description: "A modern, full-stack portfolio website featuring an integrated admin dashboard for seamless content and project management. The platform supports secure authentication with Next-Auth, state management via React Context API, and leverages MongoDB and PostgreSQL for data storage. The admin dashboard allows easy updates to portfolio content, project listings, and blog posts, all within a responsive and visually engaging UI.",
-    image: "/lovable-uploads/Portfolio.png", // Provided screenshot
-    tags: ["React", "Next.js", "Tailwind CSS", "JS", "Node.js", "Express.js", "Next-Auth", "Context API", "MongoDB"],
-    demoUrl: "https://your-portfolio-demo-link.com/",
-    githubUrl: "https://github.com/kalpsenghani/portfolio-admin-dashboard"
+    title: "AI Content Platform",
+    description: "A platform for generating and optimizing content for blogs, social media, and marketing materials with AI assistance.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    tags: ["LLM", "React", "Express", "OpenAI"],
+    demoUrl: "https://example.com/demo4",
+    githubUrl: "https://github.com/example/project4"
   },
   {
     id: 6,

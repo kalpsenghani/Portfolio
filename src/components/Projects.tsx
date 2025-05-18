@@ -8,48 +8,51 @@ import { Link } from 'react-router-dom';
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "AI Task Manager",
-    description: "An intelligent task management system that uses NLP to categorize, prioritize, and suggest deadlines for your tasks.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["AI", "React", "Node.js", "NLP"],
-    demoUrl: "https://example.com/demo1",
-    githubUrl: "https://github.com/example/project1"
+    title: "Portfolio with Admin Dashboard",
+    description: "A modern, full-stack portfolio website featuring an integrated admin dashboard for seamless content and project management. The platform supports secure authentication with Next-Auth, state management via React Context API. The admin dashboard allows easy updates to portfolio content, project listings, and blog posts, all within a responsive and visually engaging UI.",
+    image: "/lovable-uploads/Portfolio.png",
+    tags: ["React", "Next.js", "Tailwind CSS", "JS", "Node.js", "Express.js", "Next-Auth", "Context API", "Mongo"],
+    demoUrl: "https://kalpsenghani1.netlify.app/",
+    githubUrl: "https://github.com/kalpsenghani/portfolio-admin-dashboard"
   },
   {
     id: 2,
-    title: "Autonomous Coding Agent",
-    description: "A coding assistant that can understand complex requirements and generate complete code solutions with explanations.",
-    image: "https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["AI", "Python", "LangChain", "Agents"],
-    demoUrl: "https://example.com/demo2",
-    githubUrl: "https://github.com/example/project2"
+    title: "Employee Management System",
+    description: "A comprehensive employee management solution built with Angular and Node.js/GraphQL. Features include complete CRUD operations for employee data, secure file upload capabilities, robust authentication system, and a modern responsive UI. The system provides an efficient way to manage employee information, track records, and handle administrative tasks.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    tags: ["Angular", "Node.js", "GraphQL", "Authentication", "Apollo Client","Express.js"],
+    demoUrl: "https://emp-hub.netlify.app/",
+    githubUrl: "https://github.com/kalpsenghani/Employee-Management-System"
   },
   {
     id: 3,
-    title: "Developer Portfolio Generator",
-    description: "A tool that creates personalized developer portfolios by analyzing GitHub repositories and customizing designs.",
-    image: "https://images.unsplash.com/photo-1498050108023-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-    tags: ["Next.js", "TypeScript", "Tailwind", "GitHub API"],
-    demoUrl: "https://example.com/demo3",
-    githubUrl: "https://github.com/example/project3"
+    title: "SpaceX Launch Tracker",
+    description: "A comprehensive SpaceX launch tracker that displays upcoming and past launches with advanced filtering, sorting, and search capabilities. Features include mission details, launch status, and rocket information.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+    tags: ["Angular", "SpaceX API", "TypeScript", "Tailwind"],
+    demoUrl: "https://spacexlabtest2.netlify.app/",
+    githubUrl: "https://github.com/kalpsenghani/SpaceX_API"
   },
   {
     id: 4,
-    title: "AI Content Platform",
-    description: "A platform for generating and optimizing content for blogs, social media, and marketing materials with AI assistance.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["LLM", "React", "Express", "OpenAI"],
-    demoUrl: "https://example.com/demo4",
-    githubUrl: "https://github.com/example/project4"
+    title: "AI Task Manager",
+    description: "A sophisticated task management platform powered by AI that intelligently organizes and optimizes your workflow. Features include smart task categorization using NLP, automated priority assignment, deadline suggestions, and productivity insights. The system learns from your work patterns to provide personalized recommendations and helps you maintain focus on high-impact tasks.",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+    tags: ["AI", "React", "Node.js", "NLP", "Machine Learning"],
+    demoUrl: "https://example.com/demo1",
+    githubUrl: "https://github.com/kalpsenghani/ai-task-manager",
+    status: "In Progress",
+    statusColor: "text-green-400",
+    statusGlow: "animate-pulse"
   },
   {
     id: 5,
-    title: "Smart Home Dashboard",
-    description: "A modern dashboard for controlling and monitoring smart home devices with real-time analytics and automation rules.",
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["IoT", "React", "WebSocket", "D3.js"],
-    demoUrl: "https://example.com/demo5",
-    githubUrl: "https://github.com/example/project5"
+    title: "E-commerce Platform",
+    description: "A robust e-commerce platform built with Java Spring Boot, featuring microservices architecture and real-time inventory management. The system implements secure payment processing, order tracking, and customer analytics. Key features include Docker containerization for easy deployment, Kafka for event streaming and real-time notifications, and Swagger for comprehensive API documentation. The platform ensures high availability and scalability through distributed architecture.",
+    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    tags: ["Java", "Spring Boot", "Docker", "Kafka", "Swagger", "Microservices"],
+    demoUrl: "https://example.com/ecommerce-demo",
+    githubUrl: "https://github.com/example/ecommerce-platform"
   },
   {
     id: 6,
@@ -58,7 +61,10 @@ const projectsData: Project[] = [
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
     tags: ["Axios", "OpenAI GPT-4", "React", "Node.js"],
     demoUrl: "https://yourjobadvisor.netlify.app/",
-    githubUrl: "https://github.com/kalpsenghani/AI_Job_Advisor"
+    githubUrl: "https://github.com/kalpsenghani/AI_Job_Advisor",
+    status: "In progress",
+    statusColor: "bg-blue-600 hover:bg-blue-700 text-white",
+    statusGlow: "animate-pulse"
   }
 ];
 
