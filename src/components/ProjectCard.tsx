@@ -69,10 +69,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         
         <CardFooter className="flex justify-between gap-4 pt-2">
           {project.demoUrl && (
-            <Button asChild className={`w-full ${
+            <Button asChild className={`w-full px-8 py-2 rounded-full ${
               project.status 
                 ? project.statusColor || '' 
-                : 'bg-blue-600 hover:bg-blue-700 text-white'
+                : 'bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200'
             }`}>
               <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                 {project.status ? project.status : 'Live Demo'}
@@ -81,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           )}
           
           {project.githubUrl && (
-            <Button asChild className="w-full bg-gray-800 hover:bg-gray-700 text-white">
+            <Button asChild className="w-full px-8 py-2 rounded-full bg-gradient-to-b from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white focus:ring-2 focus:ring-gray-400 hover:shadow-xl transition duration-200">
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>

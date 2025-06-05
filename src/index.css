@@ -75,15 +75,13 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -167,47 +165,24 @@
     animation: blob 7s infinite;
   }
   
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-  
   @keyframes blob {
-    0% {
-      transform: translate(0px, 0px) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-    100% {
-      transform: translate(0px, 0px) scale(1);
-    }
+    0% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
   }
-  
-  /* Wave animation */
-  @keyframes wave {
-    0% {
-      transform: translateX(0) translateZ(0) scaleY(1);
-    }
-    50% {
-      transform: translateX(-25%) translateZ(0) scaleY(0.8);
-    }
-    100% {
-      transform: translateX(-50%) translateZ(0) scaleY(1);
-    }
+
+  /* Vortex background enhancements */
+  .vortex-overlay {
+    @apply fixed inset-0 pointer-events-none;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
   }
-  
-  .wave {
-    @apply opacity-30 absolute bottom-0 left-0 w-[200%] h-[60vh] min-h-[300px];
-    background: linear-gradient(180deg, rgba(66,99,235,0.1) 0%, rgba(110,89,240,0.05) 100%);
-    transform-origin: center bottom;
-    animation: wave 15s linear infinite;
+
+  .content-wrapper {
+    @apply relative z-10;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
   }
 
   /* New AI-themed styles */

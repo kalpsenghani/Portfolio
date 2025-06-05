@@ -12,17 +12,16 @@ import CustomScrollbar from '@/components/CustomScrollbar';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="min-h-screen flex flex-col">
       <CustomScrollbar />
       <Navbar />
-      <main className="flex-grow z-10">
+      <main className="flex-grow">
         <Hero />
         <Technologies />
         <About />
         <Projects />
         <Blog />
         <AILabs />
-        {/* Renamed from Contact to Resume in the UI (component remains the same) */}
         <Contact />
       </main>
       <Footer />

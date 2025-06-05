@@ -9,28 +9,30 @@ import BlogList from "./components/BlogList";
 import BlogPost from "./components/BlogPost";
 import AILabDetail from "./components/AILabDetail";
 import MicroProjects from "@/pages/MicroProjects";
-import ModernGradientBackground from "@/components/ModernGradientBackground";
+import { VortexBackground } from "@/components/ui/vortex-background";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <div className="min-h-screen bg-background font-sans">
-        <ModernGradientBackground />
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<BlogList />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/ai-labs/:labId" element={<AILabDetail />} />
-            <Route path="/micro-projects" element={<MicroProjects />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+      <div className="min-h-screen bg-black font-sans relative">
+        <VortexBackground />
+        <div className="relative z-10">
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/blog" element={<BlogList />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/ai-labs/:labId" element={<AILabDetail />} />
+              <Route path="/micro-projects" element={<MicroProjects />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
       </div>
     </TooltipProvider>
   </QueryClientProvider>

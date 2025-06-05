@@ -76,7 +76,7 @@ const Blog = () => {
       
       <div className="text-center">
         <Link to="/blog">
-          <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-400 hover:via-purple-400 hover:to-pink-400 text-white">
+          <Button className="px-8 py-2 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-400 hover:via-purple-400 hover:to-pink-400 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
             View All Articles
           </Button>
         </Link>

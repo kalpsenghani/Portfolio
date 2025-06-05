@@ -231,7 +231,7 @@ const AILabDetail = () => {
                   <div className="space-y-4">
                     {lab.githubUrl && (
                       <Button
-                        className="w-full bg-gray-700 hover:bg-gray-600 text-white"
+                        className="w-full px-8 py-2 rounded-full bg-gradient-to-b from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white focus:ring-2 focus:ring-gray-400 hover:shadow-xl transition duration-200"
                         onClick={() => window.open(lab.githubUrl, '_blank')}
                       >
                         <Github className="w-4 h-4 mr-2" />
@@ -241,7 +241,7 @@ const AILabDetail = () => {
                     
                     {lab.demoUrl && (
                       <Button
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                        className="w-full px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200"
                         onClick={() => window.open(lab.demoUrl, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
