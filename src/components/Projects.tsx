@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ProjectCard, { Project } from './ProjectCard';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
+import GlowingEffectDemo from "./ui/glowing-effect-demo";
 
 // Sample projects data
 const projectsData: Project[] = [
@@ -35,15 +36,12 @@ const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: "AI Task Manager",
-    description: "A sophisticated task management platform powered by AI that intelligently organizes and optimizes your workflow. Features include smart task categorization using NLP, automated priority assignment, deadline suggestions, and productivity insights. The system learns from your work patterns to provide personalized recommendations and helps you maintain focus on high-impact tasks.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-    tags: ["AI", "React", "Node.js", "NLP", "Machine Learning"],
-    demoUrl: "https://example.com/demo1",
-    githubUrl: "https://github.com/kalpsenghani/ai-task-manager",
-    status: "In Progress",
-    statusColor: "text-green-400",
-    statusGlow: "animate-pulse"
+    title: "Crypto Analytics Dashboard",
+    description: "A full-stack web application for tracking and analyzing cryptocurrency data in real-time. Features real-time price tracking, historical data visualization, portfolio management, price alerts, and interactive charts. Built with React, Tailwind CSS, FastAPI, MongoDB, and more.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    tags: ["React.js", "Tailwind CSS", "Recharts", "Axios", "SWR", "Zustand", "FastAPI", "MongoDB", "Python"],
+    demoUrl: "https://crypto-analytics-frontend.onrender.com/", // Replace with actual live link if available
+    githubUrl: "https://github.com/kalpsenghani/crypto-analytics-dashboard"
   },
   {
     id: 5,
@@ -94,20 +92,11 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Micro Projects Button */}
-      <motion.div 
-        className="text-center mt-12"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <Link to="/micro-projects">
-          <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-400 hover:via-purple-400 hover:to-pink-400 text-white">
-            View Micro Projects
-          </Button>
-        </Link>
-      </motion.div>
+      {/* Micro Projects Section */}
+      <div className="mt-16">
+        <h3 className="section-title mb-8">Micro Projects</h3>
+        <GlowingEffectDemo />
+      </div>
     </section>
   );
 };

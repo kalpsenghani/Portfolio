@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import BlogList from "./components/BlogList";
 import BlogPost from "./components/BlogPost";
-import MicroProjects from "@/pages/MicroProjects";
 import { VortexBackground } from "@/components/ui/vortex-background";
 
 const queryClient = new QueryClient();
@@ -25,7 +24,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/blog" element={<BlogList />} />
               <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/micro-projects" element={<MicroProjects />} />
+              {/* <Route path="/micro-projects" element={<MicroProjects />} /> */}
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
