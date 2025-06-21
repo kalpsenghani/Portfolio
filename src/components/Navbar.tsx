@@ -9,6 +9,7 @@ import {
   Mail,
   Menu,
   X,
+  Sparkles,
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -32,7 +33,7 @@ const Navbar = () => {
     { href: "#about", label: "About", icon: User },
     { href: "#projects", label: "Projects", icon: Code2 },
     { href: "#blog", label: "Blog", icon: BookOpen },
-    { href: "#ai-labs", label: "AI Labs", icon: Brain },
+    { href: "#features", label: "Features", icon: Sparkles },
   ];
 
   return (

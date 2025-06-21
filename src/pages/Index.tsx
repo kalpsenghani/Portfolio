@@ -6,7 +6,7 @@ import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
 import Technologies from '@/components/Technologies';
 import Contact from '@/components/Contact';
-import AILabs from '@/components/AILabs';
+import Features from '@/components/Features';
 import Blog from '@/components/Blog';
 import CustomScrollbar from '@/components/CustomScrollbar';
 
@@ -21,7 +21,7 @@ const Index = () => {
         <About />
         <Projects />
         <Blog />
-        <AILabs />
+        <Features />
         <Contact />
       </main>
       <Footer />
