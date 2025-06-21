@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import AnimatedText from './AnimatedText';
 import { Github, Linkedin, Eye, FileText, X } from 'lucide-react';
-import { PointerHighlight } from '@/components/ui/pointer-highlight';
 
 const Hero = () => {
   const handleResumeDownload = () => {
@@ -22,9 +21,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="block">Hi, I'm Kalp Senghani</span>
-            <span className="block mt-2">
-              I build <PointerHighlight><span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">AI-powered</span></PointerHighlight> full stack experiences
-            </span>
+            <span className="block mt-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">I build AI-powered full stack experiences</span>
           </motion.h1>
           
           <motion.h2 
