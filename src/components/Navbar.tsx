@@ -30,10 +30,10 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { href: "#about", label: "About", icon: User },
+    { href: "#hero", label: "Home", icon: User },
+    { href: "#technologies", label: "Skills", icon: Brain },
     { href: "#projects", label: "Projects", icon: Code2 },
-    { href: "#blog", label: "Blog", icon: BookOpen },
-    { href: "#features", label: "Features", icon: Sparkles },
+    { href: "#about", label: "About Me", icon: User },
   ];
 
   return (

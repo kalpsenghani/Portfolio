@@ -11,27 +11,26 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
-  id: 1,
-  year: "2024 - Present",
-  title: "Founder & AI Automation Engineer at AgenAura (In Development)",
-  description: "Designing and prototyping agentic AI automations for content creation, job applications, lead generation, and personal productivity using OpenAI, Supabase, and n8n. Focused on building scalable workflows and innovative AI-driven solutions.",
-  type: "experience"
-},
-{
-  id: 2,
-  year: "2022 - 2025",
-  title: "Advanced Diploma in Computer Programming & Analysis, George Brown College",
-  description: "Focused on full stack development, AI, cloud computing, and mobile app development. Built multiple academic and personal projects using modern technologies.",
-  type: "education"
-},
-{
-  id: 3,
-  year: "2023 - 2024",
-  title: "Personal Life Operating System (PLOS) – AI-Powered Productivity App",
-  description: "Designed and developed a modular PWA for tracking health, mood, goals, and journaling. Integrated GPT-4, Supabase, Zustand, TailwindCSS, and Next.js 14.",
-  type: "experience"
-}
-
+    id: 1,
+    year: "April 2025 – Present",
+    title: "YouTube Analytics SaaS – Advanced Creator Intelligence Dashboard",
+    description: `Will architect and launch a scalable SaaS platform for YouTube creators, targeting 10,000+ concurrent users with high-availability APIs. Will integrate YouTube Data API v3 to deliver real-time analytics and actionable insights with sub-200ms latency. Will enable modular, containerized deployments and interactive dashboards, aiming for a 40%+ increase in user engagement and robust multi-tier access control.`,
+    type: "experience"
+  },
+  {
+    id: 2,
+    year: "Apr. 2023 – Apr. 2025",
+    title: "Information Technology Support Specialist, George Brown College, Toronto, ON",
+    description: `Provided Tier 1/2 support for 1,000+ students and staff, maintaining campus-wide Windows/macOS systems and networked devices. Achieved a 95% satisfaction rate by resolving complex technical issues and automating health checks, reducing printer downtime by 30%. Managed asset tracking, software deployment, and IT documentation to optimize workflow efficiency.`,
+    type: "experience"
+  },
+  {
+    id: 3,
+    year: "2022 - 2025",
+    title: "Advanced Diploma in Computer Programming & Analysis, George Brown College",
+    description: "Focused on full stack development, AI, cloud computing, and mobile app development. Built multiple academic and personal projects using modern technologies.",
+    type: "education"
+  }
 ];
 
 const About = () => {
@@ -54,15 +53,22 @@ const About = () => {
               <p className="text-muted-foreground">
                 Currently, I'm exploring the potential of <span className="font-semibold text-blue-400">AI agents</span> to automate workflows and enhance software capabilities.
               </p>
-              
-              <h3 className="text-xl font-semibold mt-8 mb-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">Technical Skills</h3>
-              <div className="grid grid-cols-2 gap-2">
-                <Skill label="AI/ML" percentage={90} />
-                <Skill label="React" percentage={95} />
-                <Skill label="Node.js" percentage={85} />
-                <Skill label="TypeScript" percentage={90} />
-                <Skill label="Python" percentage={80} />
-                <Skill label="Cloud Architecture" percentage={75} />
+              <h3 className="text-xl font-semibold mt-8 mb-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">Certifications</h3>
+              <div className="flex flex-col gap-4">
+                <a href="https://www.credly.com/badges/your-cert-link-1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg bg-black/30 border border-blue-500/20 hover:bg-blue-900/20 transition">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Data Analytics" className="w-8 h-8" />
+                  <div>
+                    <div className="font-semibold text-blue-400">Google Data Analytics Professional Certificate</div>
+                    <div className="text-xs text-muted-foreground">Data Analytics Focus</div>
+                  </div>
+                </a>
+                <a href="https://www.credly.com/badges/your-cert-link-ibm" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg bg-black/30 border border-blue-500/20 hover:bg-blue-900/20 transition">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ibm/ibm-original.svg" alt="IBM Data Science" className="w-8 h-8" />
+                  <div>
+                    <div className="font-semibold text-blue-400">IBM Data Science Professional Certificate</div>
+                    <div className="text-xs text-muted-foreground">Data Science Focus</div>
+                  </div>
+                </a>
               </div>
             </CardContent>
           </Card>
@@ -71,12 +77,12 @@ const About = () => {
         {/* Timeline */}
         <div className="lg:col-span-2">
           <div className="relative">
-            <div className="absolute left-6 top-5 bottom-5 w-0.5 bg-gradient-to-b from-blue-400 to-blue-600"></div>
+            <div className="absolute left-6 top-5 bottom-5 w-1 bg-gradient-to-b from-blue-400 to-purple-500 shadow-lg rounded-full"></div>
             
-            <div className="space-y-12">
-              {timelineData.map((item) => (
-                <div key={item.id} className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center rounded-full border-4 border-background z-10">
+            <div className="space-y-16">
+              {timelineData.map((item, idx) => (
+                <div key={item.id} className="relative pl-16 flex items-start group">
+                  <div className="absolute left-0 top-1 w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center rounded-full border-4 border-background z-10 shadow-lg group-hover:scale-110 transition">
                     {item.type === 'education' ? (
                       <GraduationIcon />
                     ) : item.type === 'experience' ? (
@@ -85,14 +91,13 @@ const About = () => {
                       <AwardIcon />
                     )}
                   </div>
-                  
-                  <Card className="glass-card rounded-xl border-muted">
+                  <Card className="glass-card rounded-xl border-muted shadow-xl group-hover:border-blue-400 transition-all w-full">
                     <CardContent className="p-6">
                       <div className="text-sm font-medium text-muted-foreground mb-1">
                         {item.year}
                       </div>
-                      <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">{item.title}</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">{item.title}</h3>
+                      <p className="text-muted-foreground whitespace-pre-line">
                         {item.description}
                       </p>
                     </CardContent>
@@ -106,21 +111,6 @@ const About = () => {
     </section>
   );
 };
-
-const Skill = ({ label, percentage }: { label: string; percentage: number }) => (
-  <div className="mb-3">
-    <div className="flex justify-between mb-1">
-      <span className="text-sm font-medium text-blue-400">{label}</span>
-      <span className="text-sm text-muted-foreground">{percentage}%</span>
-    </div>
-    <div className="w-full h-2 bg-gray-700/50 rounded-full overflow-hidden">
-      <div 
-        className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-500 ease-out"
-        style={{ width: `${percentage}%` }}
-      />
-    </div>
-  </div>
-);
 
 const WorkIcon = () => (
   <svg 
