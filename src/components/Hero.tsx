@@ -2,12 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import AnimatedText from './AnimatedText';
-import { Github, Linkedin, Eye, FileText, X } from 'lucide-react';
+import { Github, Linkedin, Eye, FileText, X, Download } from 'lucide-react';
 
 const Hero = () => {
-  const handleResumeDownload = () => {
-    // Link to the resume PDF file
+  const handleResumeView = () => {
     window.open('/Kalp_Full_Stack.pdf', '_blank');
+  };
+
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/Kalp_Full_Stack.pdf';
+    link.download = 'Kalp_Full_Stack.pdf';
+    link.click();
   };
 
   return (
@@ -88,14 +94,25 @@ const Hero = () => {
               <Eye className="w-5 h-5 mr-2" />
               <a href="#projects">My Work</a>
             </Button>
-            <Button 
-              variant="outline" 
-              className="py-6 px-8 border-blue-500/30 text-blue-400 hover:bg-blue-900/20 flex items-center gap-2"
-              onClick={handleResumeDownload}
-            >
-              <FileText className="w-5 h-5 mr-2" />
-              Resume
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                className="py-6 px-8 border-blue-500/30 text-blue-400 hover:bg-blue-900/20 flex items-center gap-2"
+                onClick={handleResumeView}
+              >
+                <FileText className="w-5 h-5 mr-2" />
+                Resume
+              </Button>
+              <Button 
+                variant="outline" 
+                size="icon"
+                className="py-6 px-3 border-blue-500/30 text-blue-400 hover:bg-blue-900/20"
+                onClick={handleResumeDownload}
+                title="Download Resume"
+              >
+                <Download className="w-5 h-5" />
+              </Button>
+            </div>
           </motion.div>
           
           <motion.div 

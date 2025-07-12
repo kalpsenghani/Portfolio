@@ -62,9 +62,6 @@
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
 
@@ -232,5 +229,102 @@
 
   .ai-border {
     @apply border border-white/10 hover:border-blue-500/50 transition-colors duration-300;
+  }
+
+  /* Simple keyword highlighting with different colors */
+  .keyword-simple {
+    @apply font-bold;
+    color: #60a5fa; /* blue-400 */
+  }
+
+  /* Enhanced contrast for core capabilities text */
+  .feature-description {
+    @apply text-gray-200 leading-relaxed;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  .feature-title {
+    @apply text-white font-semibold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  }
+
+  .feature-icon {
+    @apply text-blue-400 transition-colors duration-300;
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+  }
+
+  .feature-icon:hover {
+    @apply text-blue-300;
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.5));
+  }
+
+  /* Enhanced project card shadow effects */
+  .project-card-shadow {
+    @apply relative overflow-hidden;
+  }
+
+  .project-card-shadow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/0 to-pink-500/0 rounded-xl blur-3xl opacity-0 transition-all duration-500 scale-150;
+    z-index: -1;
+  }
+
+  .project-card-shadow:hover::before {
+    @apply opacity-80 scale-100;
+  }
+
+  .project-card-shadow::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-blue-600/0 via-purple-600/0 to-pink-600/0 rounded-xl blur-2xl opacity-0 transition-all duration-700 scale-125;
+    z-index: -2;
+  }
+
+  .project-card-shadow:hover::after {
+    @apply opacity-100 scale-100;
+  }
+
+  /* Additional glow for project cards */
+  .project-glow {
+    @apply relative;
+  }
+
+  .project-glow::before {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl blur-xl opacity-0 transition-opacity duration-500;
+    z-index: -1;
+  }
+
+  .project-glow:hover::before {
+    @apply opacity-30;
+  }
+
+  /* Simple and visible project card shadow */
+  .project-card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .project-card-hover:hover {
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.6), 0 0 100px rgba(59, 130, 246, 0.3);
+    transform: translateY(-5px);
+  }
+
+  /* Direct shadow effect */
+  .card-shadow-effect {
+    position: relative;
+  }
+
+  .card-shadow-effect::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card-shadow-effect:hover::before {
+    opacity: 0.5;
   }
 }

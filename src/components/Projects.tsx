@@ -20,7 +20,7 @@ const projectsData: Project[] = [
     id: 2,
     title: "Employee Management System",
     description: "A comprehensive employee management solution built with Angular and Node.js/GraphQL. Features include complete CRUD operations for employee data, secure file upload capabilities, robust authentication system, and a modern responsive UI. The system provides an efficient way to manage employee information, track records, and handle administrative tasks.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    image: "/lovable-uploads/Ems.png",
     tags: ["Angular", "Node.js", "GraphQL", "Authentication", "Apollo Client","Express.js"],
     demoUrl: "https://emp-hub.netlify.app/",
     githubUrl: "https://github.com/kalpsenghani/Employee-Management-System"
@@ -29,7 +29,7 @@ const projectsData: Project[] = [
     id: 3,
     title: "SpaceX Launch Tracker",
     description: "A comprehensive SpaceX launch tracker that displays upcoming and past launches with advanced filtering, sorting, and search capabilities. Features include mission details, launch status, and rocket information.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+    image: "/lovable-uploads/Space-X.png",
     tags: ["Angular", "SpaceX API", "TypeScript", "Tailwind"],
     demoUrl: "https://spacexlabtest2.netlify.app/",
     githubUrl: "https://github.com/kalpsenghani/SpaceX_API"
@@ -38,7 +38,7 @@ const projectsData: Project[] = [
     id: 4,
     title: "Crypto Analytics Dashboard",
     description: "A full-stack web application for tracking and analyzing cryptocurrency data in real-time. Features real-time price tracking, historical data visualization, portfolio management, price alerts, and interactive charts. Built with React, Tailwind CSS, FastAPI, MongoDB, and more.",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/crypto.png",
     tags: ["React.js", "Tailwind CSS", "Recharts", "Axios", "SWR", "Zustand", "FastAPI", "MongoDB", "Python"],
     demoUrl: "https://crypto-analytics-frontend.onrender.com/", // Replace with actual live link if available
     githubUrl: "https://github.com/kalpsenghani/crypto-analytics-dashboard"
@@ -54,15 +54,12 @@ const projectsData: Project[] = [
   },
   {
     id: 6,
-    title: "AI Job Advisor",
-    description: `A full stack web application that analyzes resumes using AI to provide job role suggestions, resume improvement tips, and interview preparation questions. We can Upload Resume for AI Analysis. It has Intelligent parsing and analysis using OpenAI GPT-4 along with Personalized Recommendations. It gives Top 5 job role suggestions matching the candidate's profile and resume improvement tips Interview questions based on experience and Stores previous analysis results`,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-    tags: ["Axios", "OpenAI GPT-4", "React", "Node.js"],
-    demoUrl: "https://yourjobadvisor.netlify.app/",
-    githubUrl: "https://github.com/kalpsenghani/AI_Job_Advisor",
-    status: "In progress",
-    statusColor: "bg-blue-600 hover:bg-blue-700 text-white",
-    statusGlow: "animate-pulse"
+    title: "YouTube Short VS Long Analyzer",
+    description: "A comprehensive analytics platform that compares the performance, audience demographics, and engagement metrics of YouTube Shorts versus long-form videos. Features include side-by-side analytics, interactive charts, and actionable insights to help creators optimize their content strategy for both formats.",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "React Query", "React Router", "Framer Motion", "Recharts"],
+    demoUrl: undefined,
+    githubUrl: "https://github.com/kalpsenghani/YT_Analyzer"
   }
 ];
 

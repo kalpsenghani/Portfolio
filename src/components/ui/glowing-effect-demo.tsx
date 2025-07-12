@@ -95,28 +95,31 @@ const microProjectsData = [
     githubUrl: "https://github.com/kalpsenghani/YT_Analyzer"
   },
   {
-    title: "AI Content Platform",
-    description: "AI-powered content generation and optimization.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    tags: ["LLM", "React", "Express", "OpenAI"],
-    demoUrl: "https://example.com/demo4",
-    githubUrl: "https://github.com/example/project4"
-  },
-  {
     title: "Pomodoro Timer",
     description: "Customizable Pomodoro timer with stats.",
     image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     tags: ["React", "Timer", "Productivity", "Stats"],
     demoUrl: "https://example.com/pomodoro-demo",
     githubUrl: "https://github.com/example/pomodoro-timer"
+  },
+  {
+    title: "AI Job Advisor",
+    description: "A full stack web application that analyzes resumes using AI to provide job role suggestions, resume improvement tips, and interview preparation questions. Upload your resume for AI analysis powered by OpenAI GPT-4, receive personalized recommendations, top job role suggestions, resume tips, and interview questions tailored to your experience. Stores previous analysis results for future reference.",
+    image: "/lovable-uploads/Job-Advisor.png",
+    tags: ["Axios", "OpenAI GPT-4", "React", "Node.js"],
+    demoUrl: "https://yourjobadvisor.netlify.app/",
+    githubUrl: "https://github.com/kalpsenghani/AI_Job_Advisor"
   }
-];
+].filter(project => project.title !== "AI Content Platform");
 
 export default function GlowingEffectDemo() {
   return (
-    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
       {microProjectsData.map((project, idx) => (
-        <GridItem key={project.title} project={project} />
+        <GridItem key={project.title} project={{
+          ...project,
+          image: project.image && project.image.startsWith('/') ? 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80' : project.image
+        }} />
       ))}
     </ul>
   );
@@ -137,9 +140,9 @@ interface GridItemProps {
 
 const GridItem = ({ project }: GridItemProps) => {
   return (
-    <li className={`min-h-[14rem] list-none md:col-span-6 xl:col-span-4`}>
+    <li className={`min-h-[10rem] list-none`}>
       <div
-        className="relative h-full rounded-2xl border-2 border-white/30 hover:border-blue-400 transition-colors duration-300 p-2 md:rounded-3xl md:p-3 overflow-hidden shadow-lg"
+        className="relative h-full rounded-xl border-2 border-white/30 hover:border-blue-400 transition-colors duration-300 p-3 overflow-hidden shadow-lg"
         style={{
           backgroundImage: `url(${project.image})`,
           backgroundSize: 'cover',
@@ -148,37 +151,37 @@ const GridItem = ({ project }: GridItemProps) => {
         }}
       >
         <GlowingEffect
-          spread={40}
+          spread={20}
           glow={true}
           disabled={false}
           proximity={64}
           inactiveZone={0.01}
         />
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/30 pointer-events-none z-0" />
-        <div className="border-0.75 relative flex h-full flex-col justify-between gap-4 rounded-xl p-6 md:p-6 z-10">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/80 to-black/50 pointer-events-none z-0" />
+        <div className="border-0.75 relative flex h-full flex-col justify-between gap-2 rounded-lg p-3 z-10">
           <div className="flex flex-row items-start justify-between gap-2">
             <div className="flex-1 min-w-0">
-              <h3 className="font-sans text-xl font-semibold text-white md:text-2xl drop-shadow-lg mb-1">
+              <h3 className="font-sans text-base font-semibold text-white mb-1">
                 {project.title}
               </h3>
-              <p className="font-sans text-sm text-gray-200 md:text-base drop-shadow mb-2">
+              <p className="font-sans text-xs text-gray-200 mb-2">
                 {project.description}
               </p>
             </div>
             {/* Tech stack logos - vertical column, glassmorphism style */}
-            <div className="flex flex-col gap-2 items-end justify-start min-w-[2.5rem]">
+            <div className="flex flex-col gap-1 items-end justify-start min-w-[2rem]">
               {project.tags.map((tag) => (
                 techIconMap[tag] ? (
                   <div
                     key={tag}
-                    className="w-8 h-8 flex items-center justify-center rounded-lg bg-black/30 backdrop-blur-md border border-white/10 shadow-md"
+                    className="w-6 h-6 flex items-center justify-center rounded bg-black/30 backdrop-blur-md border border-white/10 shadow-md"
                     title={tag}
                   >
                     <img
                       src={techIconMap[tag]}
                       alt={tag}
-                      className="w-6 h-6 object-contain"
+                      className="w-4 h-4 object-contain"
                       style={{ filter: 'none' }}
                     />
                   </div>
@@ -187,16 +190,16 @@ const GridItem = ({ project }: GridItemProps) => {
             </div>
           </div>
           {/* GitHub and Live buttons */}
-          <div className="flex flex-row items-center justify-end gap-2 mt-auto">
+          <div className="flex flex-row items-center justify-end gap-1 mt-auto">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
                 title="View on GitHub"
               >
-                <Github className="w-5 h-5 text-white" />
+                <Github className="w-4 h-4 text-white" />
               </a>
             )}
             {project.demoUrl && (
@@ -204,10 +207,10 @@ const GridItem = ({ project }: GridItemProps) => {
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
+                className="w-7 h-7 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
                 title="View Live"
               >
-                <ExternalLink className="w-5 h-5 text-white" />
+                <ExternalLink className="w-4 h-4 text-white" />
               </a>
             )}
           </div>

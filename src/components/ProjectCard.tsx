@@ -38,9 +38,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       }}
       viewport={{ once: true, amount: 0.1 }}
       whileHover={{ y: -5 }}
-      className="h-full"
+      className="h-full group"
     >
-      <Card className="overflow-hidden transition-all duration-300 h-full flex flex-col glowing-card bg-gray-900/70 border-gray-800 rounded-xl">
+      <Card className="overflow-hidden transition-all duration-300 h-full flex flex-col bg-gray-900/70 border-gray-800 rounded-xl relative project-card-hover card-shadow-effect">
+        {/* Simple but visible shadow effect */}
+        <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 rounded-xl transition-all duration-300 blur-md scale-150 group-hover:scale-100 -z-10"></div>
+        
         <div className="overflow-hidden h-48 relative">
           <img 
             src={project.image} 
