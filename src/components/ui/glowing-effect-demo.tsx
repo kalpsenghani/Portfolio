@@ -114,7 +114,7 @@ const microProjectsData = [
 
 export default function GlowingEffectDemo() {
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
       {microProjectsData.map((project, idx) => (
         <GridItem key={project.title} project={{
           ...project,
@@ -140,9 +140,9 @@ interface GridItemProps {
 
 const GridItem = ({ project }: GridItemProps) => {
   return (
-    <li className={`min-h-[10rem] list-none`}>
+    <li className="min-h-[16rem] list-none">
       <div
-        className="relative h-full rounded-xl border-2 border-white/30 hover:border-blue-400 transition-colors duration-300 p-3 overflow-hidden shadow-lg"
+        className="relative h-full rounded-2xl border-2 border-white/30 hover:border-blue-400 transition-colors duration-300 p-4 overflow-hidden shadow-2xl group"
         style={{
           backgroundImage: `url(${project.image})`,
           backgroundSize: 'cover',
@@ -159,13 +159,13 @@ const GridItem = ({ project }: GridItemProps) => {
         />
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/80 to-black/50 pointer-events-none z-0" />
-        <div className="border-0.75 relative flex h-full flex-col justify-between gap-2 rounded-lg p-3 z-10">
+        <div className="relative flex h-full flex-col justify-between gap-2 rounded-lg p-3 z-10">
           <div className="flex flex-row items-start justify-between gap-2">
             <div className="flex-1 min-w-0">
-              <h3 className="font-sans text-base font-semibold text-white mb-1">
+              <h3 className="font-sans text-xl font-bold text-white mb-1">
                 {project.title}
               </h3>
-              <p className="font-sans text-xs text-gray-200 mb-2">
+              <p className="font-sans text-sm text-gray-200 mb-2">
                 {project.description}
               </p>
             </div>
@@ -175,13 +175,13 @@ const GridItem = ({ project }: GridItemProps) => {
                 techIconMap[tag] ? (
                   <div
                     key={tag}
-                    className="w-6 h-6 flex items-center justify-center rounded bg-black/30 backdrop-blur-md border border-white/10 shadow-md"
+                    className="w-7 h-7 flex items-center justify-center rounded bg-black/30 backdrop-blur-md border border-white/10 shadow-md"
                     title={tag}
                   >
                     <img
                       src={techIconMap[tag]}
                       alt={tag}
-                      className="w-4 h-4 object-contain"
+                      className="w-5 h-5 object-contain"
                       style={{ filter: 'none' }}
                     />
                   </div>
@@ -190,16 +190,16 @@ const GridItem = ({ project }: GridItemProps) => {
             </div>
           </div>
           {/* GitHub and Live buttons */}
-          <div className="flex flex-row items-center justify-end gap-1 mt-auto">
+          <div className="flex flex-row items-center justify-end gap-2 mt-auto">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-7 h-7 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
                 title="View on GitHub"
               >
-                <Github className="w-4 h-4 text-white" />
+                <Github className="w-5 h-5 text-white" />
               </a>
             )}
             {project.demoUrl && (
@@ -207,10 +207,10 @@ const GridItem = ({ project }: GridItemProps) => {
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-7 h-7 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-black/70 border border-white/20 hover:bg-gray-900 hover:border-blue-400 transition-colors"
                 title="View Live"
               >
-                <ExternalLink className="w-4 h-4 text-white" />
+                <ExternalLink className="w-5 h-5 text-white" />
               </a>
             )}
           </div>
