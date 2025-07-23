@@ -21,13 +21,13 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-normal mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="block">Hi, I'm Kalp Senghani</span>
-            <span className="block mt-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">I build AI-powered full stack experiences</span>
+            <span className="block mt-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">I design and develop high-performance web applications.</span>
           </motion.h1>
           
           <motion.h2 
@@ -39,10 +39,10 @@ const Hero = () => {
             <span className="block">I craft</span>
             <AnimatedText 
               text={[
-                "AI-powered full stack experiences", 
-                "intelligent applications", 
-                "autonomous software agents",
-                "developer tools & frameworks"
+                " Scalable full stack solutions ", 
+                "Intelligent & data-driven features", 
+                "Scalable system design",
+                "AI-powered user experiences"
               ]} 
               className="text-blue-400 font-medium" 
             />
@@ -54,7 +54,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            Full Stack Engineer with a focus on AI innovation and autonomous agents.
+           Building reliable, intuitive, and future-ready software with a passion for innovation.
           </motion.p>
           
           {/* Social Icons above buttons */}

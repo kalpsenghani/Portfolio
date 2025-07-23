@@ -274,7 +274,7 @@
   }
 
   .project-card-shadow:hover::before {
-    @apply opacity-80 scale-100;
+    @apply opacity-30 scale-100;
   }
 
   .project-card-shadow::after {
@@ -284,7 +284,7 @@
   }
 
   .project-card-shadow:hover::after {
-    @apply opacity-100 scale-100;
+    @apply opacity-20 scale-100;
   }
 
   /* Additional glow for project cards */
@@ -299,7 +299,7 @@
   }
 
   .project-glow:hover::before {
-    @apply opacity-30;
+    @apply opacity-20;
   }
 
   /* Simple and visible project card shadow */
@@ -329,6 +329,27 @@
   }
 
   .card-shadow-effect:hover::before {
-    opacity: 0.5;
+    opacity: 0.10;
+  }
+
+  /* Input border shadow effect for contact form fields */
+  .input-shadow-effect {
+    position: relative;
+    z-index: 0;
+  }
+  .input-shadow-effect::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .input-shadow-effect:hover::before,
+  .input-shadow-effect:focus-within::before {
+    opacity: 0.15;
   }
 }

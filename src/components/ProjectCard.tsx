@@ -54,7 +54,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </div>
         
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-white">{project.title}</CardTitle>
+          <div className="flex items-center gap-2">
+            <CardTitle className="text-xl font-semibold text-white flex items-center gap-2">
+              {project.title}
+              {project.statusGlow === 'in-progress' && (
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+              )}
+            </CardTitle>
+          </div>
           <div className="flex flex-wrap gap-2 mt-2">
             {project.tags.map((tag, index) => (
               <Badge key={index} variant="outline" className="text-xs bg-gray-800/50 text-blue-300 border-blue-500/20">

@@ -58,8 +58,11 @@ const projectsData: Project[] = [
     description: "A comprehensive analytics platform that compares the performance, audience demographics, and engagement metrics of YouTube Shorts versus long-form videos. Features include side-by-side analytics, interactive charts, and actionable insights to help creators optimize their content strategy for both formats.",
     image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
     tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "React Query", "React Router", "Framer Motion", "Recharts"],
-    demoUrl: undefined,
-    githubUrl: "https://github.com/kalpsenghani/YT_Analyzer"
+    demoUrl: "https://yt-analyzer-kappa.vercel.app/",
+    githubUrl: "https://github.com/kalpsenghani/YT_Analyzer",
+    status: "In Progress",
+    statusColor: "",
+    statusGlow: "in-progress"
   }
 ];
 

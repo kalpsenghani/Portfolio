@@ -142,7 +142,7 @@ const GridItem = ({ project }: GridItemProps) => {
   return (
     <li className="min-h-[16rem] list-none">
       <div
-        className="relative h-full rounded-2xl border-2 border-white/30 hover:border-blue-400 transition-colors duration-300 p-4 overflow-hidden shadow-2xl group"
+        className="relative h-full rounded-2xl border-2 border-white/30 hover:border-blue-400 transition-colors duration-300 p-4 overflow-hidden shadow-2xl group card-shadow-effect project-card-hover input-shadow-effect"
         style={{
           backgroundImage: `url(${project.image})`,
           backgroundSize: 'cover',

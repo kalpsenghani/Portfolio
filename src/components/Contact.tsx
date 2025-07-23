@@ -132,8 +132,10 @@ const ProfessionalSummary = () => (
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
+    reason: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -150,6 +152,10 @@ const ContactForm = () => {
     }));
   };
 
+  const handleReasonSelect = (reason: string) => {
+    setFormData(prev => ({ ...prev, reason }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -164,8 +170,10 @@ const ContactForm = () => {
         },
         body: JSON.stringify({
           access_key: '82927390-3cc2-4ef8-8ce2-2249f91f37cc',
-          name: formData.name,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
+          reason: formData.reason,
           message: formData.message,
           subject: 'New Contact Form Submission'
         })
@@ -178,7 +186,7 @@ const ContactForm = () => {
           type: 'success',
           message: 'Thank you for your message! I will get back to you soon.'
         });
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ firstName: '', lastName: '', email: '', reason: '', message: '' });
       } else {
         throw new Error(data.message || 'Something went wrong');
       }
@@ -193,23 +201,37 @@ const ContactForm = () => {
   };
 
   return (
-    <Card className="glowing-card bg-gray-900/70 border-gray-800 rounded-xl transition-all duration-300 overflow-hidden h-full flex flex-col justify-center">
+    <Card className="bg-gray-900/70 border-gray-800 rounded-xl overflow-hidden h-full flex flex-col justify-center">
       <CardHeader>
         <CardTitle className="text-2xl font-bold text-white">Let's Talk</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <label htmlFor="name" className="block text-base font-semibold text-white">Name</label>
-            <Input 
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="bg-transparent border border-blue-700 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-colors" 
-              placeholder="Your name"
-              required
-            />
+          <div className="flex gap-4">
+            <div className="flex-1 space-y-2">
+              <label htmlFor="firstName" className="block text-base font-semibold text-white">First Name</label>
+              <Input 
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="bg-transparent border-2 border-blue-700 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-colors input-shadow-effect rounded-2xl"
+                placeholder="First name"
+                required
+              />
+            </div>
+            <div className="flex-1 space-y-2">
+              <label htmlFor="lastName" className="block text-base font-semibold text-white">Last Name</label>
+              <Input 
+                id="lastName"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="bg-transparent border-2 border-blue-700 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-colors input-shadow-effect rounded-2xl"
+                placeholder="Last name"
+                required
+              />
+            </div>
           </div>
           <div className="space-y-2">
             <label htmlFor="email" className="block text-base font-semibold text-white">Email</label>
@@ -219,10 +241,25 @@ const ContactForm = () => {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              className="bg-transparent border border-blue-700 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-colors" 
+              className="bg-transparent border-2 border-blue-700 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-colors input-shadow-effect rounded-2xl"
               placeholder="Your email"
               required
             />
+          </div>
+          <div className="space-y-2">
+            <label className="block text-base font-semibold text-white mb-1">Reason for Contact</label>
+            <div className="flex gap-3">
+              {['Freelance', 'Collaboration', 'General Inquiry'].map(option => (
+                <button
+                  type="button"
+                  key={option}
+                  onClick={() => handleReasonSelect(option)}
+                  className={`px-4 py-2 input-shadow-effect border-2 border-blue-700 text-white font-semibold focus:outline-none transition-colors duration-200 rounded-2xl ${formData.reason === option ? 'bg-blue-600' : 'bg-gray-800'} ${formData.reason === option ? 'ring-2 ring-blue-400' : ''}`}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
           </div>
           <div className="space-y-2">
             <label htmlFor="message" className="block text-base font-semibold text-white">Message</label>
@@ -232,7 +269,7 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows={5}
-              className="bg-transparent border border-blue-700 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-colors resize-none"
+              className="bg-transparent border-2 border-blue-700 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-colors resize-none input-shadow-effect rounded-2xl"
               placeholder="Your message"
               required
             />
