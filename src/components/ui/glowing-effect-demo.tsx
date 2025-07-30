@@ -99,8 +99,8 @@ const microProjectsData = [
     description: "Customizable Pomodoro timer with stats.",
     image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     tags: ["React", "Timer", "Productivity", "Stats"],
-    demoUrl: "https://example.com/pomodoro-demo",
-    githubUrl: "https://github.com/example/pomodoro-timer"
+    demoUrl: "https://pomo-focus-eta.vercel.app/",
+    githubUrl: "https://github.com/kalpsenghani/PomoFocus"
   },
   {
     title: "AI Job Advisor",
