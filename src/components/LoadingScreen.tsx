@@ -24,11 +24,6 @@ const LoadingScreen: React.FC = () => {
         <i style={{ border: '2px solid #3b82f6' }}></i>
         <i style={{ border: '2px solid #3b82f6' }}></i>
       </div>
-      
-      {/* Loading Text */}
-      <div className="absolute bottom-32 text-white text-lg font-medium">
-        Loading...
-      </div>
     </div>
   );
 };
