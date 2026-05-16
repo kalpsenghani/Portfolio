@@ -12,21 +12,33 @@ interface TimelineItem {
 const timelineData: TimelineItem[] = [
   {
     id: 1,
-    year: "April 2025 – Present",
-    title: "YouTube Analytics SaaS – Advanced Creator Intelligence Dashboard",
-    description: `Will architect and launch a scalable SaaS platform for YouTube creators, targeting 10,000+ concurrent users with high-availability APIs. Will integrate YouTube Data API v3 to deliver real-time analytics and actionable insights with sub-200ms latency. Will enable modular, containerized deployments and interactive dashboards, aiming for a 40%+ increase in user engagement and robust multi-tier access control.`,
+    year: "Apr. 2023 – Present",
+    title: "Full Stack Developer, IT Pros",
+    description: `• Built interactive single-page applications with Vue.js and React, integrating RESTful APIs and improving page load performance by 20%
+• Implemented frontend features using HTML5, CSS3, and RxJS for projects with positive user feedback
+• Developed backend services using Node.js and Spring Boot, integrating with MongoDB and PostgreSQL databases for 6+ projects
+• Configured CI/CD pipelines using Jenkins and GitLab with Docker integration, reducing build time by 30% across 4 projects
+• Designed database schemas for applications using MongoDB and MySQL, ensuring data integrity and scalability
+• Performed API testing using Postman and debugger tools, identifying and resolving 25+ bugs across 6 applications before production release
+• Actively participated in Agile/Scrum ceremonies using Jira, contributing to sprint planning and daily standups for 5+ projects`,
     type: "experience"
   },
   {
     id: 2,
-    year: "Apr. 2023 – Apr. 2025",
-    title: "Information Technology Support Specialist, George Brown College, Toronto, ON",
-    description: `Provided Tier 1/2 support for 1,000+ students and staff, maintaining campus-wide Windows/macOS systems and networked devices. Achieved a 95% satisfaction rate by resolving complex technical issues and automating health checks, reducing printer downtime by 30%. Managed asset tracking, software deployment, and IT documentation to optimize workflow efficiency.`,
+    year: "Jan. 2022 – Dec. 2022",
+    title: "Full Stack Developer, Smartfox",
+    description: `• Developed responsive UI components using React.js and Angular with TypeScript and Bootstrap, supporting 10K+ active users across 4 applications
+• Created data access layers using Hibernate and Spring Data JPA, optimizing 8 database queries and reducing load time by 25%
+• Implemented event-driven messaging with Kafka and RabbitMQ, processing messages for real-time data synchronization
+• Deployed containerized applications to AWS using Docker and Kubernetes, supporting 5+ microservices in production
+• Optimized database queries in MySQL and PostgreSQL, implementing caching strategies that improved response times by 20% for 5 APIs
+• Implemented unit tests using Cypress for frontend components, achieving 75% code coverage across React applications
+• Conducted code reviews for 4 team members, ensuring adherence to coding standards and best practices`,
     type: "experience"
   },
   {
     id: 3,
-    year: "2022 - 2025",
+    year: "Sep. 2022 – Apr. 2025",
     title: "Advanced Diploma in Computer Programming & Analysis, George Brown College",
     description: "Focused on full stack development, AI, cloud computing, and mobile app development. Built multiple academic and personal projects using modern technologies.",
     type: "education"
